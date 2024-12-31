@@ -45,7 +45,8 @@ function reducer(state: SwapState, action: Action): SwapState {
             const newState = {
                 ...state,
                 source: value,
-                destination: (isValidDestination ? state.destination : "") as Asset
+                destination: (isValidDestination ? state.destination : "") as Asset,
+                destinationAmount:isValidDestination ? state.destinationAmount : ""
             }
 
             if (!Object.values(newState).every(value => value.length) || !rates) {
@@ -56,12 +57,13 @@ function reducer(state: SwapState, action: Action): SwapState {
 
             if (!rates[ticker]) return newState;
 
+
             const sell: number = rates[ticker].sell;
             const rate: string = sell > 0 ? (parseFloat(newState.sourceAmount) * sell).toFixed(getFractionDigit(newState.destination as Asset)) : "";
 
             return {
                 ...newState,
-                destinationAmount: rate
+                destinationAmount: rate,
             }
         }
         case ActionType.SET_DESTINATION: {
