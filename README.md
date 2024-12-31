@@ -35,7 +35,7 @@ npm run dev
 
 #### Back End
 ```
-cd backend
+cd server
 npm run dev
 ```
 
