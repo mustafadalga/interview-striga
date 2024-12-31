@@ -1,14 +1,13 @@
 const mongoose = require("mongoose");
-const { mongoDBDocumentID } = require("../constants");
 
 const schema = new mongoose.Schema({
-    _id: {
-        type: String,
-        default: mongoDBDocumentID,
-    },
     data: {
         type: Object,
         required: true,
+    },
+    updatedAt: {
+        type: Date,
+        default: Date.now,
     },
 });
 

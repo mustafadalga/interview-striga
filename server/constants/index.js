@@ -1,5 +1,4 @@
 module.exports = {
-    mongoDBDocumentID: "currentRates",
     env: {
         MONGODB_URL: "mongodb+srv://veriuretimi01:munE2L1goLKGMHY1@interview-striga.s74gt.mongodb.net/?retryWrites=true&w=majority&appName=interview-striga",
         API_KEY: "Bi8kkgXNOaZ6Yj3RmtBzkPvRk0fWz_iKw3cDIOnSSxE=",

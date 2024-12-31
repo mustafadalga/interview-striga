@@ -1,25 +1,24 @@
-import mongoose, { Document, Model } from "mongoose";
+import mongoose, { Document, Model, Schema } from "mongoose";
 import { Rates } from "@/_types";
 
 interface RateDocument extends Document {
-    _id: mongoose.Schema.Types.ObjectId
     data: Rates;
+    updatedAt: Date;
 }
 
-type RateModel = Model<RateDocument>
+type RateModel = Model<RateDocument>;
 
-
-const schema = new mongoose.Schema<RateDocument>({
-    _id: {
-        type: mongoose.Schema.Types.ObjectId,
-        required:true
-    },
+const schema = new Schema<RateDocument>({
     data: {
         type: Object,
         required: true,
     },
+    updatedAt: {
+        type: Date,
+        default: Date.now,
+    },
 });
 
-const Rate = mongoose.models.Rate as RateModel || mongoose.model<RateDocument, RateModel>("Rate", schema);
+const Rate = (mongoose.models.Rate as RateModel) || mongoose.model<RateDocument>("Rate", schema);
 
-export default Rate
+export default Rate;

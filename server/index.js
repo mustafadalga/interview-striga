@@ -2,7 +2,7 @@ const cron = require("node-cron");
 const connectDB = require("./db");
 const RateModel = require("./models/Rate");
 const getHMAC = require("./utilities/getHMAC");
-const { mongoDBDocumentID, env } = require("./constants");
+const {  env } = require("./constants");
 const transformRates = require("./utilities/transformRates.js");
 
 async function updateRates () {
@@ -26,10 +26,10 @@ async function updateRates () {
         const responseJson = await response.json();
         const rates = transformRates(responseJson);
 
-        await RateModel.updateOne(
-            { _id: mongoDBDocumentID },
+        await RateModel.findOneAndUpdate(
+            {},
             { data: rates, updatedAt: new Date() },
-            { upsert: true })
+            { upsert: true, new: true })
 
 
     } catch (error) {
