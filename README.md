@@ -23,6 +23,17 @@ git clone git@github.com:mustafadalga/interview-striga.git
 cd interview-striga
 npm run install
 ```
+
+### Prerequisites
+- **Node.js version**: 18.17.0 or higher
+  - If you use NVM (Node Version Manager), run:
+    ```
+    nvm use
+    ```
+    This will automatically switch to the correct version specified in `.nvmrc`.
+  - Alternatively, download and install Node.js 18.x from [https://nodejs.org/](https://nodejs.org/).
+
+
 ### Running the Project
 To start the development server and run the project locally, use the following command:
 
