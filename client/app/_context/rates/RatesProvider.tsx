@@ -27,7 +27,7 @@ export function RatesProvider({
                                   children,
                               }: { children: ReactNode }) {
     const [ rates, setRates ] = useState<Rates | null>(null);
-    const milliSeconds: number = 3000;
+    const milliSeconds: number = 30000;
 
     const handleFetchRates = useCallback(async () => {
         const rates = await fetchRates();
