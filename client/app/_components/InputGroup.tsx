@@ -74,7 +74,7 @@ export default function InputGroup({
             <div className="my-3 flex items-center flex-col md:flex-row justify-between gap-5">
                 <input
                     type="text"
-                    className="order-2 md:order-1 w-full h-10 outline-0 py-3 text-2xl lg:text-3xl xl:text-4xl bg-transparent disabled:bg-transparent"
+                    className="outline-none order-2 md:order-1 w-full h-10 py-3 text-2xl lg:text-3xl xl:text-4xl bg-transparent disabled:bg-transparent"
                     pattern="\d*"
                     placeholder="0"
                     disabled={!selectValue}
