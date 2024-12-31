@@ -6,7 +6,7 @@ interface RateDocument extends Document {
     data: Rates;
 }
 
-interface RateModel extends Model<RateDocument> {}
+type RateModel = Model<RateDocument>
 
 
 const schema = new mongoose.Schema<RateDocument>({
