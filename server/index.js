@@ -43,7 +43,7 @@ async function updateRates () {
 
     try {
         await connectDB();
-        console.log("MongoDB connected. Starting cron job...");
+        console.log("Starting cron job...");
 
         // Schedule cron job to run every 30 seconds
         cron.schedule("*/30 * * * * *", async () => {
